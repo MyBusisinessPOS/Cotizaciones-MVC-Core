@@ -1,0 +1,43 @@
+﻿@model Producto
+
+@{
+    ViewData["Title"] = "Productos";
+}
+
+
+<h1>Registro de productos</h1>
+
+<!--Controla los Errores visuales-->
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Crear">
+
+    <div class="mb-3">
+        <label asp-for="bar_code" class="form-label">Barcode</label>
+        <input type="text" asp-for="bar_code"  class="form-control" />
+        <span asp-validation-for="bar_code" class="text-danger"></span> <!--Controla los Errores visuales-->
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="descrip" class="form-label">Descripción</label>
+        <input type="text" asp-for="descrip" class="form-control" />
+        <span asp-validation-for="descrip" class="text-danger"></span> <!--Controla los Errores visuales-->
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="price" class="form-label">Precio</label>
+        <input type="number" asp-for="price" class="form-control" />
+        <span asp-validation-for="price" class="text-danger"></span> <!--Controla los Errores visuales-->
+
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="unit" class="form-label">Unidad</label>
+        <input type="text" asp-for="unit" class="form-control" />
+        <span asp-validation-for="unit" class="text-danger"></span> <!--Controla los Errores visuales-->
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+
+</form>
