@@ -1,19 +1,21 @@
 ﻿@model Producto
 
 @{
-    ViewData["Title"] = "Productos";
+    ViewData["Title"] = "Actualizar";
 }
 
 
-<h1>Registro de productos</h1>
+<h1>Actualiar</h1>
 
 <!--Controla los Errores visuales-->
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-<form asp-action="Crear">
+<form asp-action="Editar">
+
+    <input type="hidden" asp-for="id"/>
 
     <div class="mb-3">
         <label asp-for="bar_code" class="form-label">Barcode</label>
-        <input type="text" asp-for="bar_code"  class="form-control" />
+        <input type="text" asp-for="bar_code" class="form-control" contenteditable="false" />
         <span asp-validation-for="bar_code" class="text-danger"></span> <!--Controla los Errores visuales-->
     </div>
 
@@ -38,6 +40,6 @@
 
     </div>
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
 
 </form>

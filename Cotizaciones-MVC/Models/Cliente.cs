@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿
+
+
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 
 namespace Cotizaciones_MVC.Models
 {
@@ -8,9 +12,12 @@ namespace Cotizaciones_MVC.Models
 
         [Required(ErrorMessage = "Campo {0} requerido")]
         public string name { get; set; }
+
         [Required(ErrorMessage = "Campo {0} requerido")]
         [EmailAddress(ErrorMessage = "El campo debe de ser un correo electrónico válido")]
+        [Remote(action: "VerificarExiteEmail", controller: "Clientes")]
         public string email { get; set; }
+        
         [Required(ErrorMessage = "Campo {0} requerido")]
         public string phone { get;set; }
 

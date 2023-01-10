@@ -1,17 +1,19 @@
 ﻿@model Cliente
 
 @{
-    ViewData["Title"] = "Clientes";
+    ViewData["Title"] = "Actualizar";
 }
 
 
-<h1>Registro de Clientes</h1>
+<h1>Actualizar</h1>
 
 
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<form asp-action="Crear">
+<form asp-action="Editar">
 
+
+    <input type="hidden" asp-for="id" /> 
     <div class="mb-3">
         <label asp-for="name" class="form-label">Nombre</label>
         <input type="text" asp-for="name" class="form-control" />
@@ -21,7 +23,7 @@
 
     <div class="mb-3">
         <label asp-for="email" class="form-label">Email</label>
-        <input type="email"asp-for="email" class="form-control" />
+        <input type="email" asp-for="email" class="form-control" />
         <span asp-validation-for="email" class="text-danger"></span>
     </div>
 
@@ -33,11 +35,10 @@
     </div>
 
 
-    <button type="submit" class="btn btn-primary">Guardar</button>
-    <a class="btn btn-secondary" asp-action="Index">Cancelar</a>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
 
 </form>
 
 @section Scripts {
-    <partial name="_ValidationScriptsPartial"/>
+    <partial name="_ValidationScriptsPartial" />
 }
