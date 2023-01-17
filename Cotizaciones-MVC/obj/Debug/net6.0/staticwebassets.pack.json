@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Cotizaciones-MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Git\\Cotizaciones-MVC-Core\\Cotizaciones-MVC\\wwwroot\\Rotativa\\Windows\\wkhtmltoimage.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\Windows\\wkhtmltoimage.exe"
+    },
+    {
+      "Id": "C:\\Git\\Cotizaciones-MVC-Core\\Cotizaciones-MVC\\wwwroot\\Rotativa\\Windows\\wkhtmltopdf.exe",
+      "PackagePath": "staticwebassets\\Rotativa\\Windows\\wkhtmltopdf.exe"
+    },
+    {
       "Id": "C:\\Git\\Cotizaciones-MVC-Core\\Cotizaciones-MVC\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

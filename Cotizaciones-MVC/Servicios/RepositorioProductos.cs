@@ -16,6 +16,7 @@ namespace Cotizaciones_MVC.Servicios
         Task<Producto> ObtenerPorId(int id);
 
         Task Borrar(int id);
+        Task<Producto> ObtenerPorBarcode(string bar_code);
     }
     public class RepositorioProductos : IRepositorioProductos
     {
@@ -60,6 +61,17 @@ namespace Cotizaciones_MVC.Servicios
             return await connection.QueryFirstOrDefaultAsync<Producto>($@"SELECT id, bar_code, descrip, price, unit FROM productos WhERE id = @id", new {id});
 
         }
+
+
+        public async Task<Producto> ObtenerPorBarcode(string bar_code)
+        {
+
+            using var connection = new SqlConnection(connectionString);
+
+            return await connection.QueryFirstOrDefaultAsync<Producto>($@"SELECT id, bar_code, descrip, price, unit FROM productos WhERE bar_code = @bar_code", new { bar_code });
+
+        }
+
 
         public async Task Borrar(int id) {
             using var connection = new SqlConnection(connectionString);

@@ -3,6 +3,52 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Cotizaciones</h1>
+   
 </div>
+
+
+
+<a asp-action="Crear" class="btn btn-primary mb-3">Crear nueva Cotización</a>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Acciones</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Phone</th>
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        <!--
+      @*  @foreach (var client in Model)
+        {
+                <tr>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Editar" asp-route-id="@client.id">Editar</a>
+                        <a class="btn btn-danger" asp-action="Borrar" asp-route-id="@client.id">Borrar</a>
+
+                    </td>
+                    <td>
+                    @client.name
+                    </td>
+                    <td>
+                    @client.email
+                    </td>
+                    <td>
+                    @client.phone
+                    </td>
+
+                </tr>
+        }*@
+        -->
+
+    </tbody>
+
+
+</table>

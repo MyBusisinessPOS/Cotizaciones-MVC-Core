@@ -1,5 +1,6 @@
 ﻿using Cotizaciones_MVC.Models;
 using Cotizaciones_MVC.Servicios;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Cotizaciones_MVC.Controllers
@@ -13,7 +14,7 @@ namespace Cotizaciones_MVC.Controllers
             this.repository = repository;
         }
 
-
+        [Authorize]
         public async Task<IActionResult> Index() {
             var producto = await repository.Obtener();
             return View(producto);

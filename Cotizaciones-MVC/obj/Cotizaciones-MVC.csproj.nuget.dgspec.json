@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[2.0.123, )"
             },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"

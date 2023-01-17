@@ -1,6 +1,7 @@
 ﻿using Cotizaciones_MVC.Models;
 using Cotizaciones_MVC.Servicios;
 using Dapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 
@@ -15,6 +16,8 @@ namespace Cotizaciones_MVC.Controllers
             this.repository = repository;
         }
 
+
+        [Authorize]
         public async Task<IActionResult> Index() {
 
             var clientes = await repository.Obtener();
@@ -36,18 +39,6 @@ namespace Cotizaciones_MVC.Controllers
             {
                 return View(cliente);
             }
-
-            //EL SIGUIENTE METODO SE REMPLAZO PARA REALIZAR 
-            //var exitEmail = await repository.Existe(cliente.email);
-            //
-            //
-            ////Validamos a nivel controller y lanzamos el error
-            //if (exitEmail)
-            //{
-            //    ModelState.AddModelError(nameof(cliente.email), $"El email {cliente.email} ya existe en la base de datos");
-            //    return View(cliente);
-            //}
-
 
             await repository.Crear(cliente);
 

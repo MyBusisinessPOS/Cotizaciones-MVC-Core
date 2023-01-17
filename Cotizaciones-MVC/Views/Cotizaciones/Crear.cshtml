@@ -1,0 +1,195 @@
+﻿@model CotizacionViewModel
+
+@{
+}
+
+<h1>Crear Cotización</h1>
+
+<form asp-action="Crear">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+    <input asp-for="@Model.Cotizacion.id" hidden name="cotizacionId" />
+
+    <div class="form-group row">
+        <div class="col-1" style="text-align:right;">
+            <label class="col-form-label" style="text-align:right;">Fecha</label>
+        </div>
+        <div class="col-2">
+            <input asp-for="@Model.Cotizacion.fecha" class="form-control" />
+            <span asp-validation-for="@Model.Cotizacion.fecha" class="text-danger"></span>
+        </div>
+    </div>
+
+    <p></p>
+    <div class="form-group row">
+        <div class="col-1" style="text-align:right;">
+            <label class="col-form-label" style="text-align:right;">Cliente</label>
+        </div>
+        <div class="col-4">
+            <select name="cliente" id="cliente" asp-for="@Model.Cotizacion.cliente" asp-items="Model.Clientes" class="form-select"></select>
+            <span asp-validation-for="@Model.Cotizacion.cliente" class="text-danger"></span>
+        </div>
+    </div>
+
+
+
+
+    <p></p>
+    <div class="form-group row">
+        <div class="col-1" style="text-align:right;">
+            <label class="col-form-label" style="text-align:right;">Producto</label>
+        </div>
+        <div class="col-6">
+            <select name="bar_code" asp-items="Model.Productos" class="form-control"></select>
+        </div>
+
+        <div class="col-1">
+            <label class="col-form-label">Cantidad:</label>
+        </div>
+        <div class="col-1">
+            <input name="cantidad" id="cantidadId" class="form-control" maxlength="3" type="number" min="1" value="1" />
+        </div>
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary" asp-action="AgregarProductoPost" id="btnProducto">
+                <i class="fas fa-plus"></i> Agregar
+            </button>
+        </div>
+
+    </div>
+    <p></p>
+
+    <div class="form-group row">
+        <div class="col-2" style="text-align:right;">
+            <button type="submit" class="btn btn-primary" asp-action="emitirCotizacion">
+                <i class="fas fa-plus"></i> Emitir Cotización
+            </button>
+        </div>
+        <div class="col-1" style="text-align:right;">
+            <button type="submit" class="btn btn-warning" asp-action="index">
+                <i class="fas fa-plus"></i> Terminar
+            </button>
+        </div>
+    </div>
+</form>
+
+
+<!--Utilizamos java script-->
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $("#btnProducto").click(function () {
+            var cantidad = document.getElementById("cantidadId").value;
+            if (cantidad.toString() == '' || cantidad < 1) {
+                swal("Error", "Seleccione una cantidad Correcta", "error");
+                return false;
+            }
+        });
+    </script>
+
+}
+<h1></h1>
+
+<div>
+
+    <table class="table table-striped border">
+        <thead class="thead-dark">
+            <tr class="table-secondary thead-dark">
+
+                <th>Acciones</th>
+                <th>
+                    Barcode
+                </th>
+                <th>
+                    Descripcion
+                </th>
+                <th style="text-align:right;">
+                    Precio
+                </th>
+                <th style="text-align:right;">
+                    Cantidad
+                </th>
+                <th style="text-align:right;">
+                    Total
+                </th>
+
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model.DetalleCotizaciones)
+            {
+
+                <tr>
+
+                    <td>
+                        <a class="btn btn-primary text-white" asp-action="Mas" asp-route-Id="@item.id">
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        <a class="btn btn-dark text-white" asp-action="Menos" asp-route-Id="@item.id">
+                            <i class="fas fa-minus"></i>
+                        </a>
+                    </td>
+
+                    <td style="font-size:14px;">
+                        @Html.DisplayFor(m => item.bar_code)
+                    </td>
+
+                    <td style="font-size:14px;">
+                        @Html.DisplayFor(m => item.descripcion)
+                    </td>
+
+                    <td style="font-size:14px;text-align:right;">
+                        @Html.DisplayFor(m => item.precio)
+                    </td>
+
+                    <td style="font-size:14px;text-align:right;color:blue;font-weight:bold;">
+                        @Html.DisplayFor(m => item.cantidad)
+                    </td>
+
+                    <td style="font-size:14px;text-align:right;color:blue;font-weight:bold;">
+
+                        @Html.DisplayFor(m => item.total)
+                    </td>
+
+                </tr>
+            }
+
+
+            </thead>
+
+            <tr class="table-secondary thead-dark">
+
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th style="text-align:right;">
+
+                </th>
+                <th style="text-align:right;">
+                    Total:
+                </th>
+                <th style="text-align:right;">
+                    $
+                </th>
+
+
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+

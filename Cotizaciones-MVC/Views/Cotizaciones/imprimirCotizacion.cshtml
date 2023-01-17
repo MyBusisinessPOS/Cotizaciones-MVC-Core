@@ -1,0 +1,124 @@
+﻿@model CotizacionViewModel
+@{
+    ViewData["Title"] = "imprimir Cotizacion";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="https://png.pngtree.com/template/20191213/ourmid/pngtree-colorful-flower-logos-vectors-illustrations-image_339757.jpg" class="rounded" width="250" height="200" />
+        </div>
+        <div class="col-sm-4">
+            <label class="col-form-label" style="font-size:20px;">"Cotizaciones POS S.A de C.V."</label>
+        </div>
+    </div>
+    <div class="form-group row">
+
+        <div class="col-2">
+            <label class="col-form-label" style="font-weight:bold; font-size:40px;">
+                Cotizacion # @Model.Cotizacion.id
+            </label>
+        </div>
+        <!--
+
+        <div class="col-2" style="border: none;">
+            <label class="col-form-label" style="font-weight:bold; font-size:40px;">@Model.Cotizacion.id</label>
+        </div>
+        -->
+
+    </div>
+    <div class="form-group row">
+
+        <div class="col-2">
+            <label class="col-form-label" style="font-weight:bold; font-size:20px;">
+                Compania:
+            </label>
+        </div>
+        <div class="col-4" style="border: none;">
+            <label class="col-form-label" style="font-size:20px;">Soluciones TPV POS </label>
+        </div>
+        <div class="col-6" style="border: none;">
+            <label class="col-form-label" style="font-size:20px;">Domicilio conocido CD Mex, 57000 Delegación Cuahutemoc</label>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-2">
+            <label class="col-form-label" style="font-weight: bold; font-size:20px;">Cliente:</label>
+        </div>
+        <div class="col-6">
+            <label class="col-form-label" style="font-size:20px;">@Model.Cotizacion.datos</label>
+        </div>
+
+    </div>
+    <div class="form-group row">
+        <div class="col-2">
+            <label class="col-form-label" style="font-weight: bold; font-size:20px;">Fecha Cotización:</label>
+        </div>
+        <div class="col-6">
+            <label class="col-form-label" style="font-size:20px;">@Model.Cotizacion.fecha</label>
+        </div>
+    </div>
+
+    <div>
+        <table class="table table-striped border" style="height:10px;">
+            <thead class="thead-dark">
+                <tr class="table-secondary thead-dark">
+                    <th style="font-weight: bold; font-size:20px;">
+                        Producto
+                    </th>
+                    <th style="text-align:right; font-weight: bold; font-size:20px;">
+                        Precio
+                    </th>
+                    <th style="text-align:right; font-weight: bold; font-size:20px;">
+                        Cantidad
+                    </th>
+                    <th style="text-align:right; font-weight: bold; font-size:20px;">
+                        Total
+                    </th>
+                </tr>
+            <thead>
+            <tbody style="height:10px;">
+                        @foreach (var item in Model.DetalleCotizaciones)
+                        {
+                    <tr>
+                        <td style="font-size:20px;">
+                                    @Html.DisplayFor(m => item.descripcion)
+                        </td>
+
+                        <td style="text-align:right;font-size:20px;">
+                                    @Html.DisplayFor(m => item.precio)
+                        </td>
+                        <td style="text-align:right;font-size:20px;">
+                                    @Html.DisplayFor(m => item.cantidad)
+                        </td>
+
+                        <td style="text-align:right;font-size:20px;">
+                                    @Html.DisplayFor(m => item.total)
+                        </td>
+                    </tr>
+
+                        }
+
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div class="form-group row">
+        <div class="col-8">
+        </div>
+        <div class="col-2">
+            <label class="col-form-label" style="font-weight: bold;font-size:20px;">Total:</label>
+        </div>
+        <div class="col-2" style="text-align:right; font-size:20px;">
+            <label class="col-form-label">$@(Model.Cotizacion.importe)</label>
+        </div>
+    </div>
+</body>
+
+</html>
+

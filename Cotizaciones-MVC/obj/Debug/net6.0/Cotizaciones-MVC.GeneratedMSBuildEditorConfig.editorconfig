@@ -32,6 +32,22 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50ZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Cotizaciones/Crear.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290aXphY2lvbmVzXENyZWFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Cotizaciones/emitirCotizacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290aXphY2lvbmVzXGVtaXRpckNvdGl6YWNpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Cotizaciones/imprimirCotizacion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290aXphY2lvbmVzXGltcHJpbWlyQ290aXphY2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Cotizaciones/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ290aXphY2lvbmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,8 +76,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Shared/_LinksLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MaW5rc0xvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Usuarios/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/Usuarios/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcUmVnaXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Git/Cotizaciones-MVC-Core/Cotizaciones-MVC/Views/_ViewImports.cshtml]
